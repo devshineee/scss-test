@@ -1,0 +1,21 @@
+$number: 1;     // .5, 100px, lem
+$string: bold;  // relative, "../images/a.png"
+$color: red;  //blue, #FFFF00, rgba(0, 0, 0, 0.1)
+$boolean: true; // false
+$numm: null;
+$lislt: orange, royalblue, yellow;
+$map: (
+  o: orange,
+  r: royalblue,
+  y: yellow
+);
+@each $c in $list {
+  .box {
+    color: $c;
+  }
+}
+@each $key, $value in $map {
+  .box-#{$key} {
+    color: $value;
+  }
+}

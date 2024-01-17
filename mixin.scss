@@ -1,0 +1,53 @@
+// 재활용(Mixins)
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  @include center;
+  .item {
+    @include center;
+  }
+}
+
+.box{
+  @include center;
+}
+
+// 재활용(Mixins) - 매개변수
+@mixin box($size) {
+  width: $size;
+  height: $size;
+  background-color: tomato;
+}
+
+.container {
+  @include box(200px);
+  .item {
+    @include box(100px);
+  }
+}
+
+.box{
+  @include box(100px);
+}
+
+// 재활용(Mixins)-매개변수 값이 없을 때
+@mixin box($size: 100px, $color: tomato) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+}
+
+.container {
+  @include box(200px, red);
+  .item {
+    @include box($color: green); // 키워드 인수
+  }
+}
+
+.box{
+  @include box;
+}

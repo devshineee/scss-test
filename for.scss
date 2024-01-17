@@ -1,0 +1,9 @@
+// for (let i = 0; i < 10; i += 1) {
+//  console.log(`loop-${i}`)
+// }
+
+@for $i from 1 through 10 {
+  .box:nth-child(#{$i}) {
+    width: 100px * $i;
+  }
+}
